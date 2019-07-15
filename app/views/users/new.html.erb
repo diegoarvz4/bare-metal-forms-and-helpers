@@ -8,7 +8,7 @@
    <input type="password" name="user[password]" id="pass"/>
    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
    <input type="submit" name="submit" value="Register"/>
-</form-->
+</form
 
 <%= form_tag(:action =>"create") do %>
   
@@ -22,5 +22,17 @@
   <%= password_field(:user, :password)%>
   
   <%= submit_tag("submit") %>
-<% end %>
+<% end %> 
+-->
 
+<%= form_for @user, url: {action: "create"} do |t| %>
+    <%= t.label :username %>
+    <%= t.text_field :username %>
+    <%= t.label :email%>
+    <%= t.text_field :email ,placeholder: "diego@diego.com" %>
+    <%= t.label :password %>
+    <%= t.password_field :password %>
+
+    <%= t.submit :Register %>
+
+<% end %>

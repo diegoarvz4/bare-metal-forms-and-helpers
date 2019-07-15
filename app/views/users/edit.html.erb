@@ -1,0 +1,11 @@
+<%= form_for @user, url: {action: "update"} do |t| %>
+    <%= t.label :username %>
+    <%= t.text_field :username ,:value => @user.username %>
+    <%= t.label :email%>
+    <%= t.text_field :email , :value => @user.email %>
+    <%= t.label :password %>
+    <%= t.password_field :password %>
+
+    <%= t.submit :Register %>
+
+<% end %>
