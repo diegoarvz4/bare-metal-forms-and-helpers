@@ -26,6 +26,9 @@
 -->
 
 <%= form_for @user, url: {action: "create"} do |t| %>
+    
+    <%= render 'shared/error_messages'%>
+    
     <%= t.label :username %>
     <%= t.text_field :username %>
     <%= t.label :email%>
