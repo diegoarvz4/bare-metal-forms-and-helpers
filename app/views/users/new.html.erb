@@ -25,7 +25,7 @@
 <% end %> 
 -->
 
-<%= form_for @user, url: {action: "create"} do |t| %>
+<%= form_for @user do |t| %>
     
     <%= render 'shared/error_messages'%>
     
@@ -36,6 +36,6 @@
     <%= t.label :password %>
     <%= t.password_field :password %>
 
-    <%= t.submit :Register %>
+    <%= t.submit  %>
 
 <% end %>
