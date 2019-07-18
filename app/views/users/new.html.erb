@@ -1,0 +1,41 @@
+
+<!--form action="/users" method="post" accept-charset="UTF-8">
+ <label for="username">Username:</label>
+   <input type="text" name="user[username]" id="username"/>
+ <label for="email">Email:</label>
+   <input type="text" name="user[email]" id="email"/>
+ <label for="pass">Password:</label>
+   <input type="password" name="user[password]" id="pass"/>
+   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+   <input type="submit" name="submit" value="Register"/>
+</form
+
+<%= form_tag(:action =>"create") do %>
+  
+  <%= label_tag("user_username","Username")%>
+  <%= text_field(:user, :username)%>
+
+  <%= label_tag("user_email","Email")%>
+  <%= text_field(:user, :email)%>
+
+  <%= label_tag("user_password","Password")%>
+  <%= password_field(:user, :password)%>
+  
+  <%= submit_tag("submit") %>
+<% end %> 
+-->
+
+<%= form_for @user do |t| %>
+    
+    <%= render 'shared/error_messages'%>
+    
+    <%= t.label :username %>
+    <%= t.text_field :username %>
+    <%= t.label :email%>
+    <%= t.text_field :email ,placeholder: "diego@diego.com" %>
+    <%= t.label :password %>
+    <%= t.password_field :password %>
+
+    <%= t.submit  %>
+
+<% end %>
